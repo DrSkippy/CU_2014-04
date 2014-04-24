@@ -497,6 +497,65 @@ where $D^\prime$ has fewer columns according to how we trimmed $\Sigma$.
 \end{center}
 \end{frame}
 
+\begin{frame}[fragile]\frametitle{Topic 46 - Traffic Signals}
+\begin{verbatim}
+#### 46 ####
+count frac_gram act_count  act_frac                   n_gram
+  576  0.031167   254  0.885017                    light  1grams
+  459  0.024836   236  0.822300                      red  1grams
+  167  0.009036   110  0.383275                   driver  1grams
+  160  0.008658    91  0.317073                   people  1grams
+  158  0.008549   100  0.348432                  drivers  1grams
+  136  0.007359    94  0.327526                      one  1grams
+  115  0.006223    69  0.240418                     more  1grams
+  110  0.005952    72  0.250871                  traffic  1grams
+  100  0.005411    75  0.261324                     stop  1grams
+   99  0.005357    63  0.219512                   lights  1grams
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Topic 46 continued \ldots top 2-grams}
+\begin{verbatim}
+  293  0.016104   177  0.616725                red light  2grams
+   52  0.002858    40  0.139373               red lights  2grams
+   47  0.002583    20  0.069686            light cameras  2grams
+   39  0.002144    35  0.121951                  run red  2grams
+   35  0.001924    27  0.094077              running red  2grams
+   29  0.001594    19  0.066202             light camera  2grams
+   28  0.001539    12  0.041812             yellow light  2grams
+   28  0.001539    24  0.083624              green light  2grams
+   22  0.001209    21  0.073171                  ran red  2grams
+   22  0.001209    18  0.062718              through red  2grams
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Topic 46 continued \ldots simple sentiment}
+\begin{verbatim}   
+     Words ....... 18718     
+---------------------------- 
+  positive ... (0.0389) 728  
+  negative ... (0.0652) 1220 
+ neutral .... (0.8959) 16770 
+   Score ....... -0.25257    
+ \end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Topic 46 continued \ldots top +/- sentiment}
+\begin{verbatim}   
+             0.000           |  right | 0.003 740   |  problem  | 0.001 656   
+             1.000           |  well  | 0.002 190   | dangerous | 0.001 336   
+             2.000           |  good  | 0.001 710   |  killed   | 0.001 229   
+             3.000           | enough | 0.001 442   |  crashes  | 0.001 122   
+             4.000           |  safe  | 0.001 229   |    bad    | 0.001 015   
+             5.000           | better | 0.000 854 8 |   fault   | 0.001 015   
+             6.000           |  work  | 0.000 854 8 |   issue   | 0.000 801 4 
+             7.000           |   top  | 0.000 801 4 |   slow    | 0.000 801 4 
+             8.000           |  free  | 0.000 747 9 | problems  | 0.000 801 4 
+             9.000           | pretty | 0.000 694 5 |   limit   | 0.000 747 9 
+\end{verbatim}
+\end{frame}
+
+
 \begin{frame}
 \begin{center}
 {\Huge Focus on the intersection of \\[15 pt] Thread and Topic models}
@@ -542,6 +601,9 @@ where $D^\prime$ has fewer columns according to how we trimmed $\Sigma$.
 }
 \end{center}
 \end{frame}
+
+
+
 
 \begin{frame}
   \begin{center}
