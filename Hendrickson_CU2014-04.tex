@@ -1,0 +1,148 @@
+% DataWeek San Francisco
+% 03 October 2013
+% Scott Hendrickson
+% @DrSkippy27
+% Gnip
+
+\documentclass{beamer}
+\setbeamertemplate{navigation symbols}{}
+
+% THEMES
+\usetheme{gnip}
+% PACKAGES
+\usepackage[group-separator={,}]{siunitx}
+%\usepackage{fontspec}
+\usepackage{graphicx}
+% FOOTER
+\setbeamertemplate{footline}[text line]{
+\colorbox{white}{\parbox[22px]{\paperwidth} {\color{linecolour} {\line(1,0){500} \\ \hfill @DrSkippy27 @gnip}}}
+}
+\beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
+
+\usepackage{minted}
+\usepackage{tikz}
+
+\begin{document}
+\title{Threads: \\ Trees and Clusters}
+\author{Scott Hendrickson \\ Principal Data Scientist, Gnip \\  @DrSkippy27}
+\date{\today} 
+
+% title
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Raymond Carver, Bullwinkle and Rocky
+
+\begin{frame}
+\begin{center}
+{\Huge What do we talk about \\ [15pt] when they talk about X?} 
+\end{center}
+\hfill Apologies: Raymond Carver \\
+\end{frame}
+
+\begin{frame}\frametitle{Disqus Tree Structures}
+\begin{center}
+{\Huge articles $\leftarrow$ comments \\ [20 pt] comments $\leftarrow$ comments}
+\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Disqus Threads}
+\begin{center}
+{\Large 
+\begin{enumerate}
+\item 7 weeks
+\item Key words: ``texting,'' ``driving'' and variants
+\item Select top threads based on mentions
+\item 61,406 comments from 365 threads
+\end{enumerate}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Disqus Topic Model Approach}
+\begin{center}
+{\Large 
+\begin{enumerate}
+\item Find comments that mention key words
+\item Corpus of comments (across many threads)
+\item tf-idf matrix: terms $\times$ comments
+\item LSI (rotate space to align with ``important'' dimensions, cut dimensions)
+\item K-means (quick-and-dirty clustering in reduced dimensional space)
+\item \ldots rinse and repeat (looking for distinction and cohesion)
+\end{enumerate}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Disqus Topic Model}
+\begin{center}
+{\Large 
+\begin{enumerate}
+\item Same 7 weeks; same keywords
+\item 32,856 comments from 16,886 threads
+\item LSI: 500 features $\rightarrow$ 80 features
+\item K-means: 80 clusters as topics (?!)
+\end{enumerate}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+{\Huge Focus on the intersection of \\[15 pt] Thread and Topic models}
+\end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Comments with key words over time}
+  \begin{center}
+    \includegraphics[width=9.5cm]{./imgs/time.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Disqus Thread Activity over Time}
+  \begin{center}
+    \includegraphics[width=9.5cm]{./imgs/timebythread.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Disqus Topics Activity over Time}
+  \begin{center}
+    \includegraphics[width=9.5cm]{./imgs/timebycluster.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Dominant Topics $\times$ Threads?}
+  \begin{center}
+    \includegraphics[width=9.5cm]{./imgs/gg_heat.pdf}
+  \end{center}
+\end{frame}
+
+\begin{frame}\frametitle{When we talk about texting and driving, we talk about \ldots}
+\begin{center}
+{\Large 
+\begin{enumerate}
+\item Topic 12: poor graphic design
+\item Topic 50: fake ids and fake drivers licenses
+\item Topic 58: health/accident insurance
+\item Topic 62: drunk drivers
+\item Topic 64: buses and bus drivers
+\item Topic 67: bikes, bike lanes
+\item Topic 68: trucks and truck drivers
+\end{enumerate}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\Large Thank you!}  \\ [20pt]
+    \includegraphics[width=3cm]{./imgs/logo.png} \\ [15pt]
+    \begin{itemize}
+    \item Presentation, data, vis. code at: \url{http://github.com/DrSkippy27/Disqus-Lightening-2013}
+    \end{itemize}
+  \end{center}
+\end{frame}
+
+\end{document}
